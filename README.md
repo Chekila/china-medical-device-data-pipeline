@@ -181,7 +181,7 @@ A final validation step confirms the total row count, verifies that remaining du
 
 ### 6.1 Dataset Overview
 
-A deduplication summary table is displayed showing row counts before and after deduplication. Missing value ratios are calculated across all columns based on 50,000 randomly sampled rows and sorted by missing ratio. Database metadata is also reported: file size 3.99 GB, column count, source file count (1,136), and total record count (5,673,713).
+A deduplication summary table is displayed showing row counts before and after deduplication. Missing value ratios are calculated across all columns based on 50,000 randomly sampled rows and sorted by missing ratio. Database metadata is also reported: file size 3.99 GB, column count, source file count (1,136), 和 total record count (5,673,713).
 
 ---
 
@@ -246,6 +246,8 @@ National-level approvals (NMPA direct) dominate at 4,311,508 records (80.4%), wi
 
 ### Step 1: Download Raw Data
 
+The raw data file is too large to be included in this repository and must be downloaded manually.
+
 Go to the NMPA UDI database download page and download the full data archive:
 
 ```
@@ -260,11 +262,32 @@ UDID_FULL_RELEASE_20260501.zip
 
 Place the file in the `data/` folder of the project directory.
 
+> **Note:** The SQLite database (`chinese_medical_devices.db`) is not included in this repository. It will be automatically generated in the `database/` folder after running `china_cleaning.ipynb`.
 ---
 
 ### Step 2: Set Up the Environment
 
-This project uses `uv` to manage dependencies. Instructions will be added once the `uv` environment setup is complete.
+This project uses `uv` to manage dependencies.
+
+First, install `uv` if you have not already:
+
+```bash
+pip install uv
+```
+
+Then install all project dependencies:
+
+```bash
+uv sync
+```
+
+Finally, register the Jupyter kernel:
+
+```bash
+uv run python -m ipykernel install --user --name china-devices --display-name "Python (china-devices)"
+```
+
+Once the kernel is registered, open Jupyter and select **Python (china-devices)** as the kernel before running any notebook.
 
 ---
 
@@ -308,4 +331,3 @@ Main outputs include:
 - Top 15 registrants bar chart and pie chart
 - Approval type distribution pie chart
 - Top 10 approving provinces bar chart and pie chart
-- UDI coding system distribution bar chart
