@@ -1,0 +1,14 @@
+[project]
+name = "china-devices"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=7.2.0",
+    "jupyter>=1.1.1",
+    "lxml>=6.1.1",
+    "matplotlib>=3.10.9",
+    "pandas>=3.0.3",
+    "tqdm>=4.67.3",
+]

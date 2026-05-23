@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Database files (too large for GitHub)
+database/
+
+# Raw data (too large for GitHub)
+data/
+
+# OS files
+.DS_Store
+Thumbs.db
